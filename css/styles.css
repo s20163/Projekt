@@ -1,0 +1,182 @@
+body {
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url("../assets/background.jpg");
+  background-size: cover;
+  display: flex;
+  font-family: "Open Sans", sans-serif;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+p {
+  font-size: 18px;
+}
+
+.flex-row {
+  display: flex;
+}
+
+.flex-column-50 {
+  padding: 40px;
+  flex: 50%;
+}
+
+.dnd-logo {
+  position: absolute;
+  width: 70px;
+  bottom: 80px;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.main-wrapper {
+  background: rgba(255, 255, 255, 0.85);
+  width: 90%;
+  height: 85%;
+}
+
+.page {
+  text-align: center;
+}
+
+.basic-note {
+  max-width: 700px;
+  margin: 0 auto;
+  margin-bottom: 32px;
+}
+
+.btn {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  white-space: nowrap;
+  text-decoration: none;
+  text-align: center;
+  background: #ec2127;
+  color: #fff;
+  margin: 0;
+  min-width: 64px;
+  line-height: 36px;
+  padding: 0 16px;
+  border-radius: 4px;
+}
+
+.race-image {
+  max-height: 280px;
+}
+
+.character-details input {
+  margin: 15px;
+}
+
+#diceAnimations {
+  position: absolute;
+  width: 600px;
+  bottom: 200px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 150px;
+}
+
+.stat-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.box {
+  min-width: 100px;
+  border: 1px solid #000000;
+  padding: 15px;
+  font-size: 48px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.boxFinal {
+  min-width: 100px;
+  border: 1px solid #000000;
+  padding: 7px;
+  font-size: 30px;
+  font-weight: 600;
+  margin-right: 50px;
+}
+
+#finalButton {
+  margin-top: 120px;
+}
+
+.character-block {
+  padding: 15px;
+  padding-top: 23px;
+}
+
+#statsFinal {
+  width: 20%;
+  margin-left: 60px;
+}
+
+.text-align-left {
+  text-align: left;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+#playerAbilities {
+  background: #bbbbbb;
+  border: 3px solid #3a1700;
+  margin-right: 50px;
+  font-size: 24px;
+  font-weight: 600;
+  padding-bottom: 46px;
+}
+
+#playerAbilities tr:nth-child(even) {
+  background: #919191;
+}
+
+#playerInfo {
+  background: #bbbbbb;
+  border: 3px solid #3a1700;
+  margin-right: 50px;
+  font-weight: 600;
+}
+
+#playerInfo th {
+  width: max-content;
+}
+
+#playerInfo td{
+  padding: 10px;
+  border: 1px solid #3a1700;
+}
+
+#playerInfo tr:nth-child(even) {
+  background: #919191;
+}
+
+.tableUserData {
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}

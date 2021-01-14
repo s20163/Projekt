@@ -1,0 +1,313 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>D&D Character Creator</title>
+    <meta name="description" content="D&D Character Creator">
+    <meta name="author" content="Sylwester Kąkol">
+    <link rel="stylesheet" href="css/styles.css">
+    <script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.dice.js"></script>
+
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="main-wrapper">
+            <div id="welcomePage" class="page">
+                <h1 class="title">Welcome traveler!</h1>
+                <p class="basic-note">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit nesciunt
+                    placeat quasi autem
+                    voluptatum odit a itaque corporis minus? Vel ullam voluptates expedita eligendi minus neque
+                    aspernatur? Laborum, alias in? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit
+                    nesciunt
+                    placeat quasi autem
+                    voluptatum odit a itaque corporis minus? Vel ullam voluptates expedita eligendi minus neque
+                    aspernatur? Laborum, alias in?</p>
+                <button class="btn continueBtn">Start your adventure!</button>
+            </div>
+            <div id="firstPage" class="page hidden">
+                <h2>Who are you?</h2>
+                <p class="basic-note">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit nesciunt
+                    placeat quasi autem
+                    voluptatum odit a itaque corporis minus? Vel ullam voluptates expedita eligendi minus neque
+                    aspernatur?</p>
+                <select id="raceSelect" name="race-select">
+                    <option disabled selected="selected">Choose your race</option>
+                    <option value="Dwarf">Dwarf</option>
+                    <option value="Elf">Elf</option>
+                    <option value="Human">Human</option>
+                </select>
+                <select id="classSelect">
+                    <option disabled selected="selected">Choose your class</option>
+                    <option value="Fighter">Fighter</option>
+                    <option value="Rogue">Rogue</option>
+                    <option value="Wizard">Wizard</option>
+                </select>
+                <button class="btn continueBtn">Continue</button>
+                <div id="raceAndClass" class="flex-row">
+                    <div id="selectedRace" class="flex-column-50 hidden">
+                        <img id="selectedRaceImg" class="race-image" />
+                        <div id="selectedRaceDsc" style="padding-top: 20px"></div>
+                    </div>
+                    <div id="selectedClass" class="flex-column-50 hidden">
+                        <img id="selectedClassImg" />
+                        <div id="selectedClassDsc" style="padding-top: 20px"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="secondPage" class="page hidden">
+                <h2>Enter character details</h2>
+                <p class="basic-note">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque sed
+                    necessitatibus inventore similique placeat officiis nam. Officia fugiat quibusdam porro adipisci
+                    unde quam aspernatur officiis. Excepturi, a odio. Excepturi, aliquid.</p>
+                <div class="character-details">
+                    <label for="pName">Player name:</label>
+                    <input type="text" id="pName" name="pName" placeholder="Enter player name..."><br>
+                    <label for="cName">Character name:</label>
+                    <input type="text" id="cName" name="cName" placeholder="Enter character name..."><br>
+                    <select id=alignmentSelect name="alignmentSelect">
+                        <option disabled selected="selected">Choose your alignment
+                        <option value="lawfulGood">Lawful Good</option>
+                        <option value="lawfulNeutral">Lawful Neutral</option>
+                        <option value="lawfulEvil">Lawful Evil</option>
+                        <option value="neutralGood">Neutral Good</option>
+                        <option value="neutral">Neutral</option>
+                        <option value="neutralEvil">Neutral Evil</option>
+                        <option value="chaoticGood">Chaotic Good</option>
+                        <option value="chaoticNeutral">Chaotic Neutral</option>
+                        <option value="chaoticEvil">Chaotic Evil</option>
+                    </select>
+                    <select id="backgroundSelect" name="background">
+                        <option disabled selected="selected">Choose your background</option>
+                        <option value="sailor">Sailor</option>
+                        <option value="hermit">Hermit</option>
+                    </select><br>
+                    <label for="height">Character age</label>
+                    <input type="age" id="age" name="age" placeholder="Character age..."><br>
+                    <label for="height">Character height</label>
+                    <input type="height" id="height" name="height" placeholder="Character height..."><br>
+                    <label for="weight">Character weight</label>
+                    <input type="weight" id="weight" name="weight" placeholder="Character weight..."><br>
+                    <label for="eyes">Character eye colour</label>
+                    <input type="eyes" id="eyes" name="eyes" placeholder="Character eye colour..."><br>
+                    <label for="skin">Character skin</label>
+                    <input type="skin" id="skin" name="skin" placeholder="Character skin..."><br>
+                    <label for="hair">Character hair</label>
+                    <input type="hair" id="hair" name="hair" placeholder="Character hair..."><br>
+                    <button id="getDataBtn" class="btn">Continue</button>
+                </div>
+            </div>
+            <div id="thirdPage" class="page hidden">
+                <h2>Let's determine your character stats!</h2>
+                <div class="stats">
+                    <div class="stat-wrapper">
+                        <h3>Strength</h3>
+                        <div id="strBox" class="box">
+                            0
+                        </div>
+                        <button id="rollStr" type="button" class="btn">Roll!</button>
+                    </div>
+                    <div class="stat-wrapper">
+                        <h3>Dexterity</h3>
+                        <div id="dexBox" class="box">
+                            0
+                        </div>
+                        <button id="rollDex" type="button" class="btn">Roll!</button>
+                    </div>
+                    <div class="stat-wrapper">
+                        <h3>Constitution</h3>
+                        <div id="conBox" class="box">
+                            0
+                        </div>
+                        <button id="rollCon" type="button" class="btn">Roll!</button>
+                    </div>
+                    <div class="stat-wrapper">
+                        <h3>Inteligence</h3>
+                        <div id="intBox" class="box">
+                            0
+                        </div>
+                        <button id="rollInt" type="button" class="btn">Roll!</button>
+                    </div>
+                    <div class="stat-wrapper">
+                        <h3>Wisdom</h3>
+                        <div id="wisBox" class="box">
+                            0
+                        </div>
+                        <button id="rollWis" type="button" class="btn">Roll!</button>
+                    </div>
+                    <div class="stat-wrapper">
+                        <h3>Charisma</h3>
+                        <div id="chaBox" class="box">
+                            0
+                        </div>
+                        <button id="rollCha" type="button" class="btn">Roll!</button>
+                    </div>
+                </div>
+                <button id="finalButton" class="btn continueBtn">Finish!</button>
+                <div id="diceAnimations">
+                    <div id="dice1" style="width:150px; float: left; height:150px;"></div>
+                    <div id="dice2" style="width:150px; float: left;height:150px;"></div>
+                    <div id="dice3" style="width:150px; float: left;height:150px;"></div>
+                    <div id="dice4" style="width:150px; float: left;height:150px;"></div>
+                </div>
+            </div>
+            <div id="fourthPage" class="page hidden">
+                <div class="character-block flex-row">
+                    <div id="statsFinal">
+                        <h3 class="text-align-left">Strength</h3>
+                        <div id="strBoxFinal" class="boxFinal">
+                        </div>
+                        <h3 class="text-align-left">Dexterity</h3>
+                        <div id="dexBoxFinal" class="boxFinal">
+                        </div>
+                        <h3 class="text-align-left">Constitution</h3>
+                        <div id="conBoxFinal" class="boxFinal">
+                        </div>
+                        <h3 class="text-align-left">Inteligence</h3>
+                        <div id="intBoxFinal" class="boxFinal">
+                        </div>
+                        <h3 class="text-align-left">Wisdom</h3>
+                        <div id="wisBoxFinal" class="boxFinal">
+                        </div>
+                        <h3 class="text-align-left">Charisma</h3>
+                        <div id="chaBoxFinal" class="boxFinal">
+                        </div>
+                    </div>
+                    <table id="playerAbilities" class="flex-column-50">
+                        <tr>
+                            <td>Acrobatics (Dex)</td>
+                            <td id="tableAbilityAcrobatics" class="text-align-center"></td>
+                        </tr>
+                        <tr>
+                            <td>Animal Handling (Wis)</td>
+                            <td id="tableAbilityAnimal" class="text-align-center"></td>
+                        </tr>
+                        <tr>
+                            <td>Arcana (Int)</td>
+                            <td id="tableAbilityArcana" class="text-align-center"></td>
+                        </tr>
+                        <tr>
+                            <td>Athletics (Str)</td>
+                            <td id="tableAbilityAthletics" class="text-align-center"></td>
+                        </tr>
+                        <tr>
+                            <td>Deception (Cha)</td>
+                            <td id="tableAbilityDeception" class="text-align-center"></td>
+                        </tr>
+                        <tr>
+                            <td>History (Int)</td>
+                            <td id="tableAbilityHistory" class="text-align-center"></td>
+                        </tr>
+                        <tr>
+                            <td>Insight (Wis)</td>
+                            <td id="tableAbilityInsight" class="text-align-center"></td>
+                        </tr>
+                        <tr>
+                            <td>Intimidation (Cha)</td>
+                            <td id="tableAbilityIntimidation" class="text-align-center"></td>
+                        </tr>
+                        <tr>
+                            <td>Investigation (Int)</td>
+                            <td id="tableAbilityInvestigation" class="text-align-center"></td>
+                        </tr>
+                        <tr>
+                            <td>Medicine (Wis)</td>
+                            <td id="tableAbilityMedicine" class="text-align-center"></td>
+                        </tr>
+                        <tr>
+                            <td>Nature (Int)</td>
+                            <td id="tableAbilityNature" class="text-align-center"></td>
+                        </tr>
+                        <tr>
+                            <td>Perception (Wis)</td>
+                            <td id="tableAbilityPerception" class="text-align-center"></td>
+                        </tr>
+                        <tr>
+                            <td>Performance (Cha)</td>
+                            <td id="tableAbilityPerformance" class="text-align-center"></td>
+                        </tr>
+                        <tr>
+                            <td>Persuasion (Cha)</td>
+                            <td id="tableAbilityPersuasion" class="text-align-center"></td>
+                        </tr>
+                        <tr>
+                            <td>Religion (Int)</td>
+                            <td id="tableAbilityReligion" class="text-align-center"></td>
+                        </tr>
+                        <tr>
+                            <td>Sleight of Hand (Dex)</td>
+                            <td id="tableAbilitySleight" class="text-align-center"></td>
+                        </tr>
+                        <tr>
+                            <td>Stealth (Dex)</td>
+                            <td id="tableAbilityStealth" class="text-align-center"></td>
+                        </tr>
+                        <tr>
+                            <td>Survival (Wis)</td>
+                            <td id="tableAbilitySurvival" class="text-align-center"></td>
+                        </tr>
+                    </table>
+                    <table id="playerInfo" class="flex-column-50">
+                        <tr>
+                            <td>Player Name</td>
+                            <td id="tablePName" class="text-align-center tableUserData"></td>
+                        </tr>
+                        <tr>
+                            <td>Character Name</td>
+                            <td id="tableCName" class="text-align-center tableUserData"></td>
+                        </tr>
+                        <tr>
+                            <td>Race</td>
+                            <td id="tableRace" class="text-align-center tableUserData"></td>
+                        </tr>
+                        <tr>
+                            <td>Class</td>
+                            <td id="tableClass" class="text-align-center tableUserData"></td>
+                        </tr>
+                        <tr>
+                            <td>Level</td>
+                            <td id="tableLvl" class="text-align-center tableUserData"></td>
+                        </tr>
+                        <tr>
+                            <td>Alignment</td>
+                            <td id="tableAlignment" class="text-align-center tableUserData"></td>
+                        </tr>
+                        <tr>
+                            <td>Background</td>
+                            <td id="tableBackground" class="text-align-center tableUserData"></td>
+                        </tr>
+                        <tr>
+                            <td>Age</td>
+                            <td id="tableAge" class="text-align-center tableUserData"></td>
+                        </tr>
+                        <tr>
+                            <td>Height</td>
+                            <td id="tableHeight" class="text-align-center tableUserData"></td>
+                        </tr>
+                        <tr>
+                            <td>Weight</td>
+                            <td id="tableWeight" class="text-align-center tableUserData"></td>
+                        </tr>
+                        <tr>
+                            <td>Eyes</td>
+                            <td id="tableEyes" class="text-align-center tableUserData"></td>
+                        </tr>
+                        <tr>
+                            <td>Skin</td>
+                            <td id="tableSkin" class="text-align-center tableUserData"></td>
+                        </tr>
+                        <tr>
+                            <td>Hair</td>
+                            <td id="tableHair" class="text-align-center tableUserData">
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <img class="dnd-logo" src="assets/dnd_logo.png" alt="D&D Logo" />
+    </div>
+</body>
+<script src="js/main.js"></script>
+
+</html>
